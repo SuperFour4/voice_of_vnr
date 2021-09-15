@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "666159702091",
+    "project_id": "voiceofvnr-5db78",
+    "storage_bucket": "voiceofvnr-5db78.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:666159702091:android:c64d9cab2b48204a246dce",
+        "android_client_info": {
+          "package_name": "com.example.voice_of_vnr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "666159702091-jjvk0p5r9dckngh5ouub42k78s63vc2i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAd8peyK968_FQuazQRHK99ujIAtkVLmU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "666159702091-jjvk0p5r9dckngh5ouub42k78s63vc2i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
