@@ -1,6 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:voice_of_vnr/FadeAnimation.dart';
-
+import 'package:voice_of_vnr/search_screen.dart';
 class TextCommand extends StatefulWidget {
   const TextCommand({Key key}) : super(key: key);
 
@@ -9,6 +10,8 @@ class TextCommand extends StatefulWidget {
 }
 
 class _TextCommandState extends State<TextCommand> {
+  String string;
+  TextEditingController messageController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -100,12 +103,15 @@ class _TextCommandState extends State<TextCommand> {
                                   border: Border(bottom: BorderSide(color: Colors.grey[100]))
                               ),
                               child: TextField(
-                                decoration: InputDecoration(
-                                    border: InputBorder.none,
-                                    hintText: "Type Text Here",
-                                    hintStyle: TextStyle(color: Colors.grey[400])
-                                ),
+                                textAlign: TextAlign.center,
+                                style: TextStyle(color: Colors.black),
+                                onChanged: (value) {
+                                  string = value;
+                                },
                               ),
+                            ),
+                            SizedBox(
+                              height: 8.0,
                             ),
 
                           ],
@@ -124,7 +130,14 @@ class _TextCommandState extends State<TextCommand> {
                             )
                         ),
                         child: Center(
-                          child: Text("Search", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+                          child: TextButton(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => SearchScreen(text: string,)),
+                                );
+                              },
+                              child: Text("Search", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),)),
                         ),
                       )),
                       SizedBox(height: 70,),

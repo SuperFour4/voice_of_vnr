@@ -33,7 +33,8 @@ dependencies:
   flutter_svg: ^0.22.0
   speech_to_text: ^4.2.1
   simple_animations: ^1.3.3
-
+  avatar_glow: ^2.0.1
+  highlight_text: ^1.1.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

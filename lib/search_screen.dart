@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:voice_of_vnr/FadeAnimation.dart';
-
-
-class VoiceCommand extends StatefulWidget {
-  const VoiceCommand({Key key}) : super(key: key);
-
+class SearchScreen extends StatefulWidget {
+  SearchScreen({Key key, this.text}) : super(key: key);
+  final String text;
   @override
-  _VoiceCommandState createState() => _VoiceCommandState();
+  _SearchScreenState createState() => _SearchScreenState();
 }
 
-class _VoiceCommandState extends State<VoiceCommand> {
+class _SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,7 +71,7 @@ class _VoiceCommandState extends State<VoiceCommand> {
                               margin: EdgeInsets.only(top: 50),
                               child: Center(
                                 child: Text(
-                                  "Voice Command",
+                                  widget.text,
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 40,
@@ -85,43 +83,6 @@ class _VoiceCommandState extends State<VoiceCommand> {
                     ],
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.all(30.0),
-                  child: Column(
-                    children: <Widget>[
-                      FadeAnimation(
-                          2,
-                          TextButton(
-                            onPressed: () {
-                              setState(() {
-                                print("Voice");
-                                Navigator.pushNamed(context, 'voice');
-                              });
-                            },
-                            child: Container(
-                              height: 50,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  gradient: LinearGradient(colors: [
-                                    Color.fromRGBO(143, 148, 251, 1),
-                                    Color.fromRGBO(143, 148, 251, .6),
-                                  ])),
-                              child: Center(
-                                child: Text(
-                                  "Voice",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                            ),
-                          )),
-                      SizedBox(
-                        height: 70,
-                      ),
-                    ],
-                  ),
-                )
               ],
             ),
           ),
