@@ -94,6 +94,7 @@ class _VoiceCommandState extends State<VoiceCommand> {
                             onPressed: () {
                               setState(() {
                                 print("Voice");
+                                Navigator.pushNamed(context, 'voice');
                               });
                             },
                             child: Container(

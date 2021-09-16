@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:voice_of_vnr/text_command.dart';
 import 'package:voice_of_vnr/voice_command.dart';
 import 'home_page.dart';
-
+import 'package:voice_of_vnr/voice.dart';
 void main() {
   runApp(App());
 }
-
 class App extends StatefulWidget {
   @override
   _AppState createState() => _AppState();
@@ -23,7 +22,8 @@ class _AppState extends State<App> {
       routes: {
         'homepage': (context) => MyHomePage(title: 'Voice Of VNR'),
         'voicepage': (context) => VoiceCommand(),
-        'textpage': (context) => TextCommand()
+        'textpage': (context) => TextCommand(),
+        'voice': (context) => Voice()
       },
       home: MyHomePage(title: 'Voice Of VNR'),
     );
