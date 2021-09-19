@@ -101,9 +101,17 @@ class _MyHomePageState extends State<MyHomePage> {
               FadeAnimation(
                 2.0,
                 Container(
-                  color: Colors.red,
                   height: 50,
-                  width: 150,
+                  width: 250,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      gradient: LinearGradient(
+                          colors: [
+                            Color.fromRGBO(143, 148, 251, 1),
+                            Color.fromRGBO(143, 148, 251, .6),
+                          ]
+                      )
+                  ),
                   child: TextButton(
                       onPressed: () {
                         setState(() {
@@ -112,16 +120,24 @@ class _MyHomePageState extends State<MyHomePage> {
                         });
                       },
                       child: Text("Voice command",
-                          style: TextStyle(color: Colors.black))),
+                          style: TextStyle(color: Colors.white))),
                 ),
               ),
               SizedBox(height: 30),
               FadeAnimation(
-                2.2,
+                1.6,
                 Container(
-                  color: Colors.red,
                   height: 50,
-                  width: 150,
+                  width: 250,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      gradient: LinearGradient(
+                          colors: [
+                            Color.fromRGBO(143, 148, 251, 1),
+                            Color.fromRGBO(143, 148, 251, .6),
+                          ]
+                      )
+                  ),
                   child: TextButton(
                       onPressed: () {
                         setState(() {
@@ -130,7 +146,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         });
                       },
                       child: Text("Text command",
-                          style: TextStyle(color: Colors.black))),
+                          style: TextStyle(color: Colors.white))),
                 ),
               )
             ],

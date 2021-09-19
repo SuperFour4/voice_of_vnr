@@ -88,27 +88,39 @@ class _SearchScreenState extends State<SearchScreen> {
                                           'assets/images/clock.png'))),
                             )),
                       ),
-                      Positioned(
-                        child: FadeAnimation(
-                            1.6,
-                            Container(
-                              margin: EdgeInsets.only(top: 50),
-                              child: Center(
-                                child: Text(
-                                  widget.text,
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 40,
-                                      fontWeight: FontWeight.bold),
-                                ),
-
+                      FadeAnimation(
+                          1.6,
+                          Container(
+                            margin: EdgeInsets.only(top: 50),
+                            padding: EdgeInsets.all(20.0),
+                            child: Center(
+                              child: Text(
+                                query,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 40,
+                                fontWeight: FontWeight.bold),
                               ),
-                            )),
-                      ),
-
+                            ),
+                          )),
                     ],
                   ),
                 ),
+                FadeAnimation(
+                      1.6,
+                      Container(
+                        margin: EdgeInsets.only(top: 50),
+                        padding: EdgeInsets.all(20.0),
+                        child: Center(
+                          child: Text(
+                            widget.text,
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 20,),
+                          ),
+
+                        ),
+                      )),
               ],
             ),
           ),
