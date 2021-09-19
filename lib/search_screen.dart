@@ -1,14 +1,38 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:voice_of_vnr/FadeAnimation.dart';
+import 'package:voice_of_vnr/SearchService.dart';
 class SearchScreen extends StatefulWidget {
   SearchScreen({Key key, this.text}) : super(key: key);
   final String text;
+  final String dispString = "";
+
   @override
   _SearchScreenState createState() => _SearchScreenState();
 }
 
 class _SearchScreenState extends State<SearchScreen> {
-  @override
+  // String value="No Data found";
+  // initState() {
+  //   initiateFun(widget.text);
+  // }
+  // void initiateFun(String textVal) async{
+  //   setState(() async{
+  //     value = await initiateSearch(widget.text);
+  //   });
+  // }
+  //  Map map;
+  // initiateSearch(valueParam) async {
+  //   print("hello hie");
+  //   await SearchService().getData(valueParam).then((value){
+  //     for(var i in value.docs){
+  //       setState((){
+  //         map = i.data();
+  //         print(map['value']);
+  //       });
+  //     }
+  //   });
+  // }
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.white,
@@ -77,9 +101,11 @@ class _SearchScreenState extends State<SearchScreen> {
                                       fontSize: 40,
                                       fontWeight: FontWeight.bold),
                                 ),
+
                               ),
                             )),
-                      )
+                      ),
+
                     ],
                   ),
                 ),

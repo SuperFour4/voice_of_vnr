@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:highlight_text/highlight_text.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
 import 'package:voice_of_vnr/search_screen.dart';
+
+import 'Loading.dart';
 class Voice extends StatefulWidget {
   @override
   _VoiceState createState() => _VoiceState();
@@ -82,7 +84,7 @@ class _VoiceState extends State<Voice> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => SearchScreen(text: _text,)),
+                    MaterialPageRoute(builder: (context) => LoadingScreen(text: _text,)),
                   );
                 },
                 child: Text('NEXT'),

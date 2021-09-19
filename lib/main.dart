@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:voice_of_vnr/text_command.dart';
 import 'package:voice_of_vnr/voice_command.dart';
+import 'Loading.dart';
 import 'home_page.dart';
 import 'package:voice_of_vnr/voice.dart';
 void main() {
@@ -23,7 +24,8 @@ class _AppState extends State<App> {
         'homepage': (context) => MyHomePage(title: 'Voice Of VNR'),
         'voicepage': (context) => VoiceCommand(),
         'textpage': (context) => TextCommand(),
-        'voice': (context) => Voice()
+        'voice': (context) => Voice(),
+        'load' : (context) => LoadingScreen()
       },
       home: MyHomePage(title: 'Voice Of VNR'),
     );

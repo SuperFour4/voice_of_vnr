@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:voice_of_vnr/FadeAnimation.dart';
 import 'package:voice_of_vnr/search_screen.dart';
+
+import 'Loading.dart';
 class TextCommand extends StatefulWidget {
   const TextCommand({Key key}) : super(key: key);
 
@@ -134,7 +136,7 @@ class _TextCommandState extends State<TextCommand> {
                               onPressed: () {
                                 Navigator.push(
                                   context,
-                                  MaterialPageRoute(builder: (context) => SearchScreen(text: string,)),
+                                  MaterialPageRoute(builder: (context) => LoadingScreen(text: string,)),
                                 );
                               },
                               child: Text("Search", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),)),
