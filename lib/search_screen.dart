@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 import 'package:voice_of_vnr/FadeAnimation.dart';
 import 'package:voice_of_vnr/SearchService.dart';
 class SearchScreen extends StatefulWidget {
@@ -12,27 +13,17 @@ class SearchScreen extends StatefulWidget {
 }
 
 class _SearchScreenState extends State<SearchScreen> {
-  // String value="No Data found";
-  // initState() {
-  //   initiateFun(widget.text);
-  // }
-  // void initiateFun(String textVal) async{
-  //   setState(() async{
-  //     value = await initiateSearch(widget.text);
-  //   });
-  // }
-  //  Map map;
-  // initiateSearch(valueParam) async {
-  //   print("hello hie");
-  //   await SearchService().getData(valueParam).then((value){
-  //     for(var i in value.docs){
-  //       setState((){
-  //         map = i.data();
-  //         print(map['value']);
-  //       });
-  //     }
-  //   });
-  // }
+
+  initState(){
+    speak();
+  }
+  FlutterTts tts = FlutterTts();
+  speak() async{
+    print('InTextToVoice');
+    await tts.setLanguage("eng-US");
+    await tts.setPitch(1);
+    await tts.speak(widget.text);
+  }
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.white,
