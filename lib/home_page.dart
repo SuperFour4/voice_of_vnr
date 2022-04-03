@@ -116,7 +116,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       onPressed: () {
                         setState(() {
                           command = "Voice command activated";
-                          Navigator.pushNamed(context, 'voicepage');
+                          Navigator.pushNamed(context, 'voice');
                         });
                       },
                       child: Text("Voice command",
@@ -148,7 +148,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Text("Text command",
                           style: TextStyle(color: Colors.white))),
                 ),
-              )
+              ),
             ],
           ),
         ),
