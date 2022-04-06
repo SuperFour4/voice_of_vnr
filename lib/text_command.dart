@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:voice_of_vnr/FadeAnimation.dart';
 import 'package:voice_of_vnr/search_screen.dart';
-
 import 'Loading.dart';
+
 class TextCommand extends StatefulWidget {
   const TextCommand({Key key}) : super(key: key);
 

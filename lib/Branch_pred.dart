@@ -1,15 +1,16 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:voice_of_vnr/FadeAnimation.dart';
-import 'package:voice_of_vnr/Query_page.dart';
 
 void main() => runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: UserPage(),
+      home: BranchPred(),
     )
 );
 
-class UserPage extends StatelessWidget {
+class BranchPred extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,9 +68,9 @@ class UserPage extends StatelessWidget {
                       ),
                       Positioned(
                         child: FadeAnimation(1.6, Container(
-                          margin: EdgeInsets.only(top: 90),
+                          margin: EdgeInsets.only(top: 50),
                           child: Center(
-                            child: Text("Welcome to Voice Of VNR", style: TextStyle(
+                            child: Text("BranchPrediction", style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 40,
                                 fontWeight: FontWeight.bold),),
@@ -102,31 +103,20 @@ class UserPage extends StatelessWidget {
                             Container(
                               padding: EdgeInsets.all(8.0),
                               decoration: BoxDecoration(
-                                  border: Border(bottom: BorderSide(
-                                      color: Colors.grey[100]))
+                                  border: Border(bottom: BorderSide(color: Colors.grey[100]))
                               ),
-                              child: FadeAnimation(2, Container(
-                                height: 50,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
-                                    gradient: LinearGradient(
-                                        colors: [
-                                          Color.fromRGBO(143, 148, 251, 1),
-                                          Color.fromRGBO(143, 148, 251, .6),
-                                        ]
-                                    )
+                              child: TextField(
+                                decoration: InputDecoration(
+                                    border: InputBorder.none,
+                                    hintText: "Enter rank",
+                                    hintStyle: TextStyle(color: Colors.grey[400]),
                                 ),
-                                child: Center(
-                                  child: TextButton(
-                                      onPressed: () {
-                                          Navigator.pushNamed(context, 'querypage');
-                                      },
-                                      child: Text("Search",
-                                        style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),)),
-                                ),
-                              )),
+                                keyboardType: TextInputType.number,
+                                inputFormatters: [
+                                  LengthLimitingTextInputFormatter(6),
+                                  FilteringTextInputFormatter.digitsOnly,
+                                ],
+                              ),
                             ),
                             Container(
                               padding: EdgeInsets.all(8.0),
@@ -147,39 +137,8 @@ class UserPage extends StatelessWidget {
                                 ),
                                 child: Center(
                                   child: TextButton(
-                                      onPressed: () {
-                                        Navigator.pushNamed(context, 'branchpred');
-                                      },
-                                      child: Text("BranchPrediction",
-                                        style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),)),
-                                  ),
-                              )),
-                            ),
-                            Container(
-                              padding: EdgeInsets.all(8.0),
-                              decoration: BoxDecoration(
-                                  border: Border(bottom: BorderSide(
-                                      color: Colors.grey[100]))
-                              ),
-                              child: FadeAnimation(2, Container(
-                                height: 50,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
-                                    gradient: LinearGradient(
-                                        colors: [
-                                          Color.fromRGBO(143, 148, 251, 1),
-                                          Color.fromRGBO(143, 148, 251, .6),
-                                        ]
-                                    )
-                                ),
-                                child: Center(
-                                  child: TextButton(
-                                      onPressed: () {
-                                        Navigator.pushNamed(context, 'calendar');
-                                      },
-                                      child: Text("Calendar",
+                                      onPressed: () {},
+                                      child: Text("Check",
                                         style: TextStyle(
                                             color: Colors.white,
                                             fontWeight: FontWeight.bold),)),
