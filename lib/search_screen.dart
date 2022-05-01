@@ -22,6 +22,7 @@ class _SearchScreenState extends State<SearchScreen> {
     print('InTextToVoice');
     await tts.setLanguage("eng-US");
     await tts.setPitch(1);
+
     await tts.speak(widget.text);
   }
   Widget build(BuildContext context) {
