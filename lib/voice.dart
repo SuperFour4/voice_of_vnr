@@ -6,13 +6,15 @@ import 'package:speech_to_text/speech_to_text.dart' as stt;
 import 'package:voice_of_vnr/search_screen.dart';
 import 'package:voice_of_vnr/FadeAnimation.dart';
 import 'Loading.dart';
+import 'package:alan_voice/alan_voice.dart';
 class Voice extends StatefulWidget {
   @override
   _VoiceState createState() => _VoiceState();
+
 }
 
 class _VoiceState extends State<Voice> {
-  final Map<String, HighlightedWord> _highlights = {
+/*  final Map<String, HighlightedWord> _highlights = {
     'flutter': HighlightedWord(
       onTap: () => print('flutter'),
       textStyle: const TextStyle(
@@ -48,19 +50,22 @@ class _VoiceState extends State<Voice> {
         fontWeight: FontWeight.bold,
       ),
     ),
-  };
+  };*/
 
   stt.SpeechToText _speech;
   bool _isListening = false;
   String _text = 'Press the button and start speaking';
   double _confidence = 1.0;
-
+   String sdkKey = "f52106f34ff2f09ec85601bccf1b955e2e956eca572e1d8b807a3e2338fdd0dc/stage";
   @override
   void initState() {
     super.initState();
-    _speech = stt.SpeechToText();
+    //initAlan();
   }
 
+  initAlan(){
+    AlanVoice.addButton(sdkKey);
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -146,7 +151,8 @@ class _VoiceState extends State<Voice> {
                             onPressed: () {
                               setState(() {
                                 print("Voice");
-                                Navigator.pushNamed(context, 'voice');
+                                initAlan();
+                               // Navigator.pushNamed(context, 'voice');
                               });
                             },
                             child: Container(
