@@ -7,6 +7,7 @@ import 'package:voice_of_vnr/voice_command.dart';
 import 'Loading.dart';
 import 'Query_page.dart';
 import 'package:voice_of_vnr/voice.dart';
+
 void main() {
   runApp(App());
 }
@@ -15,8 +16,11 @@ class App extends StatefulWidget {
   _AppState createState() => _AppState();
 }
 
+
 class _AppState extends State<App> {
+
   @override
+
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
