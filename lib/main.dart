@@ -7,7 +7,6 @@ import 'package:voice_of_vnr/voice_command.dart';
 import 'Loading.dart';
 import 'Query_page.dart';
 import 'package:voice_of_vnr/voice.dart';
-
 void main() {
   runApp(App());
 }
@@ -25,7 +24,6 @@ class _AppState extends State<App> {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      darkTheme: ThemeData(brightness: Brightness.dark),
       initialRoute: 'homepage',
       routes: {
         'querypage': (context) => QueryPage(title: 'Voice Of VNR'),
@@ -35,7 +33,7 @@ class _AppState extends State<App> {
         'load' : (context) => LoadingScreen(),
         'homepage' : (context) => UserPage(),
         'branchpred' : (context) => BranchPred(),
-        'calendar' : (context) => EventCalendar()
+        'calendar' : (context) => Calendar()
       },
       home: UserPage(),
     );

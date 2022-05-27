@@ -2,15 +2,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:voice_of_vnr/FadeAnimation.dart';
+import 'package:voice_of_vnr/branch_prediction.dart';
+import 'dart:convert';
+class BranchPred extends StatefulWidget {
+  @override
+  State<BranchPred> createState() => _BranchPredState();
+}
 
-void main() => runApp(
-    MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: BranchPred(),
-    )
-);
-
-class BranchPred extends StatelessWidget {
+class _BranchPredState extends State<BranchPred> {
+  String _rank;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -107,10 +107,16 @@ class BranchPred extends StatelessWidget {
                               ),
                               child: TextField(
                                 decoration: InputDecoration(
-                                    border: InputBorder.none,
-                                    hintText: "Enter rank",
-                                    hintStyle: TextStyle(color: Colors.grey[400]),
+                                  border: InputBorder.none,
+                                  hintText: "Enter rank",
+                                  hintStyle: TextStyle(color: Colors.black),
                                 ),
+                                onChanged: (value)
+                                {
+                                  setState((){
+                                    _rank=value;
+                                  });
+                                },
                                 keyboardType: TextInputType.number,
                                 inputFormatters: [
                                   LengthLimitingTextInputFormatter(6),
@@ -137,7 +143,9 @@ class BranchPred extends StatelessWidget {
                                 ),
                                 child: Center(
                                   child: TextButton(
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        Navigator.push(context, MaterialPageRoute(builder: (context) => BranchPredictionPage(_rank)));
+                                      },
                                       child: Text("Check",
                                         style: TextStyle(
                                             color: Colors.white,
@@ -147,7 +155,8 @@ class BranchPred extends StatelessWidget {
                             ),
                           ],
                         ),
-                      )),
+                      )
+                      ),
                       SizedBox(height: 30,),
                     ],
                   ),
@@ -156,6 +165,6 @@ class BranchPred extends StatelessWidget {
             ),
           ),
         )
-    );
+    );;
   }
 }

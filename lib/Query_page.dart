@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:voice_of_vnr/FadeAnimation.dart';
-import 'package:alan_voice/alan_voice.dart';
 class QueryPage extends StatefulWidget {
   QueryPage({Key key, this.title}) : super(key: key);
   final String title;
@@ -9,31 +8,7 @@ class QueryPage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<QueryPage> {
-  String command = "Welcome to VNR Vignana Jyothi";
-  String sdkKey = "f52106f34ff2f09ec85601bccf1b955e2e956eca572e1d8b807a3e2338fdd0dc/stage";
-  initAlan(){
-    AlanVoice.addButton(sdkKey, buttonAlign: AlanVoice.BUTTON_ALIGN_RIGHT);
-    AlanVoice.callbacks.add((command) => _handleCommand(command.data));
-  }
-  _handleCommand(Map<String, dynamic> response) {
-    switch (response["command"]) {
-      case "home":
-        Navigator.pushNamed(context, 'homepage');
-        break;
-      case "branch":
-        Navigator.pushNamed(context, 'branchpred');
-        break;
-      case "calendar":
-        Navigator.pushNamed(context, 'calendar');
-        break;
-      case "disable":
-        AlanVoice.deactivate();
-        break;
-      default:
-        print("no match found");
-        break;
-    }
-  }
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -139,8 +114,6 @@ class _MyHomePageState extends State<QueryPage> {
                   child: TextButton(
                       onPressed: () {
                         setState(() {
-                          command = "Voice command activated";
-                          initAlan();
                          // Navigator.pushNamed(context, 'voice');
                         });
                       },
